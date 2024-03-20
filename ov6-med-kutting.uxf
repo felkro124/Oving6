@@ -1,0 +1,89 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram noteseh</help_text><element><id>UMLClass</id><coordinates><x>56</x><y>189</y><w>98</w><h>63</h></coordinates><panel_attributes>Arbeidstasjon
+--
+-arbeidstasjon_nr {PK}
+-plassering (VARCHAR)
+-informasjon
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>245</x><y>42</y><w>98</w><h>105</h></coordinates><panel_attributes>Ordre
+--
+-ordre_nr {PK}
+-ordre_dato (DATE)
+-antatt_lev_dato (DATE)
+-reell_lev_dato (DATE)
+-kunde_id* {FK}
+-betalings_status
+-avtalt_rabatt
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>56</y><w>98</w><h>56</h></coordinates><panel_attributes>Kunde
+--
+-kunde_id {PK}
+-kunde_navn (VARCHAR)
+-kunde_adresse (VARCHAR)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>581</x><y>413</y><w>98</w><h>49</h></coordinates><panel_attributes>Standardstol
+--
+-pris
+-lagerbeholdning</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>322</y><w>98</w><h>42</h></coordinates><panel_attributes>Spesialstol
+--
+-Spesialstol_navn {PK}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>21</x><y>406</y><w>154</w><h>91</h></coordinates><panel_attributes>Deltype
+--
+
+deltype_nr {PK}
+-Deltype_navn {PK} - eks. stolbein
+deltype_farge
+deltype_pris
+deltype_beskrivelse
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>413</y><w>126</w><h>77</h></coordinates><panel_attributes>Del
+--
+del_nr {PK}
+del_navn - eks. stolbein 12158
+del_farge
+del_pris
+del_beskrivelse</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>91</x><y>63</y><w>168</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=0..*
+gjennomfører &gt;
+&lt; blir bestilt av</panel_attributes><additional_attributes>11;20;220;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>49</x><y>574</y><w>98</w><h>63</h></coordinates><panel_attributes>Stoffrull
+--
+Stoffrull_nr {PK}
+Deltype_nr* {FK}
+meter</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>98</x><y>245</y><w>56</w><h>175</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2= 1..1
+&lt; finnes i
+har &gt;</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>77</y><w>98</w><h>42</h></coordinates><panel_attributes>Bestilling
+--
+-bestilling_id{PK}
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>77</y><w>133</w><h>42</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=1..*
+inneholder &gt;
+&lt; kommer fra</panel_attributes><additional_attributes>10;10;170;30</additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>91</y><w>105</w><h>105</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=1..*
+inneholder &gt;
+&lt; er med i
+</panel_attributes><additional_attributes>10;10;90;130</additional_attributes></element><element><id>Relation</id><coordinates><x>427</x><y>322</y><w>140</w><h>42</h></coordinates><panel_attributes>lt=-
+m1=0..1
+
+er en &gt;
+</panel_attributes><additional_attributes>10;30;180;10</additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>322</y><w>105</w><h>105</h></coordinates><panel_attributes>lt=-
+m1=0..1
+
+&lt; er en
+</panel_attributes><additional_attributes>120;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>441</y><w>154</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=0..*
+bruker &gt;
+&lt; er av</panel_attributes><additional_attributes>10;20;200;20</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>357</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=1..*
+består av &gt;</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>224</y><w>105</w><h>119</h></coordinates><panel_attributes>lt=-
+
+m2=1..1
+&lt; inneholder</panel_attributes><additional_attributes>10;150;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>91</x><y>490</y><w>70</w><h>98</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=1..1
+teaches to &gt;</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>532</x><y>182</y><w>147</w><h>49</h></coordinates><panel_attributes>Stol
+--
+stolmodell_navn {PK}
+stoltype_navn {PK}
+antall</panel_attributes><additional_attributes></additional_attributes></element></diagram>
